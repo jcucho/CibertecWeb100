@@ -15,13 +15,13 @@ namespace Cibertec.RepositoriesTests
             _context = new NorthwindDbContext();
         }
 
-        [Fact(DisplayName = "[CustomerRepository] Get All")]
-        public void Customer_Repository_GetAll()
-        {
-            var repo = new RepositoryEF<Customer>(_context);
-            var result = repo.GetList();
-            //result.
-            Assert.True(result.Count() > 0);
-        }
+        //[Fact(DisplayName = "[CustomerRepository] Get All")]
+        //public void Customer_Repository_GetAll()
+        //{
+        //    var repo = new Repository<Customer>(_context);
+        //    var result = repo.GetList();
+        //    //result.
+        //    Assert.True(result.Count() > 0);
+        //}
     }
 }

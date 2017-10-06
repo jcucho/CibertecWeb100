@@ -3,11 +3,11 @@ using System.Collections.Generic;
 
 namespace Cibertec.Repositories
 {
-    public class RepositoryEF<T> : IRepository<T> where T : class
+    public class Repository<T> : IRepository<T> where T : class
     {
         //inyeccion de dependencias
-        private readonly DbContext _context;
-        public RepositoryEF(DbContext context)
+        protected DbContext _context;
+        public Repository(DbContext context)
         {
             _context = context;
         }
@@ -38,6 +38,11 @@ namespace Cibertec.Repositories
         {
             _context.Update(entity);
             return _context.SaveChanges() > 0;
+        }
+
+        int IRepository<T>.Insert(T entity)
+        {
+            throw new System.NotImplementedException();
         }
     }
 }
