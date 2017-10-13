@@ -1,15 +1,9 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Cibertec.UnitOfWork;
-using Cibertec.Repositories.EntityFramework.Northwind;
-using Cibertec.MVC.Models;
-using Microsoft.EntityFrameworkCore;
+using Cibertec.Repositories.Dapper.Northwind;
 
 namespace Cibertec.MVC
 {
@@ -25,15 +19,12 @@ namespace Cibertec.MVC
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddTransient<IUnitOfWork>(
-                option => new NorthwindUnitOfWork(
-                        new NorthwindDbContext(
-                                new DbContextOptionsBuilder<NorthwindDbContext>()
-                                .UseSqlServer("Server=JCUCHO\\SQLEXPRESS;Database=Northwind_Lite; Trusted_Connection=True;MultipleActiveResultSets=True")
-                                .Options
-                            )
-                    ) 
-            );
+            services.AddSingleton<IUnitOfWork>
+                (option => new NorthwindUnitOfWork
+                    (
+                        Configuration.GetConnectionString("Northwind")
+                    )
+                );
             services.AddMvc();
         }
 
