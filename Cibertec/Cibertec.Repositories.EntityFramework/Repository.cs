@@ -28,10 +28,10 @@ namespace Cibertec.Repositories
             return _context.Set<T>();
         }
 
-        public bool Insert(T entity)
+        public int Insert(T entity)
         {
             _context.Add(entity);
-            return _context.SaveChanges() > 0;
+            return _context.SaveChanges();
         }
 
         public bool Update(T entity)
@@ -40,9 +40,5 @@ namespace Cibertec.Repositories
             return _context.SaveChanges() > 0;
         }
 
-        int IRepository<T>.Insert(T entity)
-        {
-            throw new System.NotImplementedException();
-        }
     }
 }

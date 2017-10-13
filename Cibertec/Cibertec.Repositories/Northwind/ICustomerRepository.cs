@@ -4,6 +4,6 @@ namespace Cibertec.Repositories.Northwind
 {
     public interface ICustomerRepository: IRepository<Customer>
     {
-        Customer searchByNames(string firstname, string lastname);
+        Customer searchByNames(string firstName, string lastName);
     }
 }
