@@ -15,9 +15,17 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Cibertec.UnitOfWork", "Cibe
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Cibertec.Repositories.EntityFrameworkTests", "Cibertec.Repositories.EntityFrameworkTests\Cibertec.Repositories.EntityFrameworkTests.csproj", "{6E0E5250-7869-4F4D-B0C1-B0C454D89DD2}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cibertec.Repositories.Dapper", "Cibertec.Repositories.Dapper\Cibertec.Repositories.Dapper.csproj", "{0B5CC5C3-76BA-4710-91DD-1861DFC43147}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Cibertec.Repositories.Dapper", "Cibertec.Repositories.Dapper\Cibertec.Repositories.Dapper.csproj", "{0B5CC5C3-76BA-4710-91DD-1861DFC43147}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cibertec.Repositories.DapperTests", "Cibertec.Repositories.DapperTests\Cibertec.Repositories.DapperTests.csproj", "{76E66070-B65B-4B15-AC86-A10CA708CDC4}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Cibertec.Repositories.DapperTests", "Cibertec.Repositories.DapperTests\Cibertec.Repositories.DapperTests.csproj", "{76E66070-B65B-4B15-AC86-A10CA708CDC4}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Data", "Data", "{BAABFD21-4771-4E59-9852-DC93EBA8CFEF}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Test", "Test", "{C2AB44C2-9572-4C8F-9F2F-4DD018B53DCE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cibertec.MVC", "Cibertec.MVC\Cibertec.MVC.csproj", "{E758721D-C00D-4F52-A991-43046FA1CC25}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Web", "Web", "{61A46CAE-F49E-49E7-903C-885B4210CBC2}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -57,9 +65,24 @@ Global
 		{76E66070-B65B-4B15-AC86-A10CA708CDC4}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{76E66070-B65B-4B15-AC86-A10CA708CDC4}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{76E66070-B65B-4B15-AC86-A10CA708CDC4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E758721D-C00D-4F52-A991-43046FA1CC25}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E758721D-C00D-4F52-A991-43046FA1CC25}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E758721D-C00D-4F52-A991-43046FA1CC25}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E758721D-C00D-4F52-A991-43046FA1CC25}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{00B7C042-D694-4731-B338-17BD921532C3} = {BAABFD21-4771-4E59-9852-DC93EBA8CFEF}
+		{DE7D7E4B-08D9-4A16-9BEB-830A946349F9} = {BAABFD21-4771-4E59-9852-DC93EBA8CFEF}
+		{E4CF2F98-C6B1-4180-B015-8B3B12103202} = {C2AB44C2-9572-4C8F-9F2F-4DD018B53DCE}
+		{609545B8-748F-491F-9B4A-79E91205B8C8} = {BAABFD21-4771-4E59-9852-DC93EBA8CFEF}
+		{2D00D7E8-AC33-40B2-9B22-F86B38948207} = {BAABFD21-4771-4E59-9852-DC93EBA8CFEF}
+		{6E0E5250-7869-4F4D-B0C1-B0C454D89DD2} = {C2AB44C2-9572-4C8F-9F2F-4DD018B53DCE}
+		{0B5CC5C3-76BA-4710-91DD-1861DFC43147} = {BAABFD21-4771-4E59-9852-DC93EBA8CFEF}
+		{76E66070-B65B-4B15-AC86-A10CA708CDC4} = {C2AB44C2-9572-4C8F-9F2F-4DD018B53DCE}
+		{E758721D-C00D-4F52-A991-43046FA1CC25} = {61A46CAE-F49E-49E7-903C-885B4210CBC2}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {FA846BAC-8AC7-454E-B999-B090DFE2217E}
