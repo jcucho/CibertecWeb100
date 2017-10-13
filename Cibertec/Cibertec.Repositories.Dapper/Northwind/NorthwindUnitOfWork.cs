@@ -3,7 +3,8 @@ using Cibertec.Repositories.Northwind;
 
 namespace Cibertec.Repositories.Dapper.Northwind
 {
-    internal class NorthwindUnitOfWork : IUnitOfWork
+    public class NorthwindUnitOfWork : IUnitOfWork
+
     {
         public NorthwindUnitOfWork(string connectioString)
         {
