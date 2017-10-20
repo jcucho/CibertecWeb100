@@ -8,6 +8,8 @@ using FluentValidation.AspNetCore;
 using Cibertec.Models;
 using FluentValidation;
 using Cibertec.WebApi.Validators;
+using Microsoft.AspNetCore.ResponseCompression;
+using System.IO.Compression;
 
 namespace Cibertec.WebApi
 {
@@ -29,7 +31,15 @@ namespace Cibertec.WebApi
                         Configuration.GetConnectionString("Northwind")
                     )
                 );
-            services.AddMvc();
+
+            services.AddMvc().AddFluentValidation();
+            services.AddTransient<IValidator<Customer>, CustomerValidator>();
+
+            services.AddResponseCompression();
+            services.Configure<GzipCompressionProviderOptions>(options =>
+           options.Level = CompressionLevel.Optimal);
+
+
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
