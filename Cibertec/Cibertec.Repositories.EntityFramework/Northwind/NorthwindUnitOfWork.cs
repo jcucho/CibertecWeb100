@@ -28,5 +28,7 @@ namespace Cibertec.Repositories.EntityFramework.Northwind
         public IProductRepository Products { get; private set; }
 
         public ISupplierRepository Suppliers { get; private set; }
+
+        public IUserRepository Users => throw new NotImplementedException();
     }
 }
