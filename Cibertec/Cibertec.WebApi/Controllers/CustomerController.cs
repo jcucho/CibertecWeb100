@@ -22,6 +22,11 @@ namespace Cibertec.WebApi.Controllers
         {
             return Ok(_unit.Customers.GetList());
         }
+        [HttpGet]
+        public IActionResult GetList()
+        {
+            return Ok(_unit.Customers.GetList());
+        }
 
         [HttpGet]
         [Route("{id:int}")]
