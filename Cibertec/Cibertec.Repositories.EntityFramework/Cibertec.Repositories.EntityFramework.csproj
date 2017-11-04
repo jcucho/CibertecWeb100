@@ -10,7 +10,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Cibertec.Models\Cibertec.Models.csproj" />
+    <ProjectReference Include="..\Cibertec.Repositories\Cibertec.Repositories.csproj" />
   </ItemGroup>
 
 </Project>
