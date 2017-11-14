@@ -15,9 +15,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Cibertec.UnitOfWork", "Cibe
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Cibertec.Repositories.EntityFrameworkTests", "Cibertec.Repositories.EntityFrameworkTests\Cibertec.Repositories.EntityFrameworkTests.csproj", "{6E0E5250-7869-4F4D-B0C1-B0C454D89DD2}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cibertec.Repositories.Dapper", "Cibertec.Repositories.Dapper\Cibertec.Repositories.Dapper.csproj", "{0B5CC5C3-76BA-4710-91DD-1861DFC43147}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Cibertec.Repositories.Dapper", "Cibertec.Repositories.Dapper\Cibertec.Repositories.Dapper.csproj", "{0B5CC5C3-76BA-4710-91DD-1861DFC43147}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cibertec.Repositories.DapperTests", "Cibertec.Repositories.DapperTests\Cibertec.Repositories.DapperTests.csproj", "{76E66070-B65B-4B15-AC86-A10CA708CDC4}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Cibertec.Repositories.DapperTests", "Cibertec.Repositories.DapperTests\Cibertec.Repositories.DapperTests.csproj", "{76E66070-B65B-4B15-AC86-A10CA708CDC4}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Data", "Data", "{AE50C9DA-EF1D-4DE8-90B0-D08FC8E4DE15}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
