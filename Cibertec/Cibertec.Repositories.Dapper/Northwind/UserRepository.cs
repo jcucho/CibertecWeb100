@@ -10,6 +10,7 @@ namespace Cibertec.Repositories.Dapper.Northwind
         public UserRepository(string connectionString) : base(connectionString)
         {
         }
+
         public User ValidaterUser(string email, string password)
         {
             using (var connection = new SqlConnection(_connectionString))
@@ -18,7 +19,9 @@ namespace Cibertec.Repositories.Dapper.Northwind
                 parameters.Add("@email", email);
                 parameters.Add("@password", password);
 
-                return connection.QueryFirstOrDefault<User>("dbo.ValidateUser", parameters, commandType: System.Data.CommandType.StoredProcedure);
+                return connection.QueryFirstOrDefault<User>("dbo.ValidateUser",
+                    parameters,
+                    commandType: System.Data.CommandType.StoredProcedure);
             }
         }
     }

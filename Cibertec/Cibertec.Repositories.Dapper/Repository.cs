@@ -10,7 +10,7 @@ namespace Cibertec.Repositories.Dapper
         protected string _connectionString;
         public Repository(string connectionString)
         {
-            SqlMapperExtensions.TableNameMapper = (type) => { return $"{ type.Name }"; };
+            SqlMapperExtensions.TableNameMapper = (type) => { return $"[{ type.Name }]"; };
             _connectionString = connectionString;
         }
         public bool Delete(T entity)

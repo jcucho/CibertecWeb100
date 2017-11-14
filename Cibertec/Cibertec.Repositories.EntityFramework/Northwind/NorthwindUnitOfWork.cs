@@ -7,9 +7,16 @@ namespace Cibertec.Repositories.EntityFramework.Northwind
 {
     public class NorthwindUnitOfWork : IUnitOfWork
     {
+        private string v;
+
         public NorthwindUnitOfWork(DbContext context)
         {
             Customers = new CustomerRepository(context);
+        }
+
+        public NorthwindUnitOfWork(string v)
+        {
+            this.v = v;
         }
 
         public ICustomerRepository Customers { get; private set; }
@@ -21,5 +28,7 @@ namespace Cibertec.Repositories.EntityFramework.Northwind
         public IProductRepository Products { get; private set; }
 
         public ISupplierRepository Suppliers { get; private set; }
+
+        public IUserRepository Users => throw new NotImplementedException();
     }
 }

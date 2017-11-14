@@ -2,7 +2,7 @@
 
 namespace Cibertec.Repositories.Northwind
 {
-    public interface IOrderRepository : IRepository<Order>
+    public interface IOrderRepository: IRepository<Order>
     {
     }
 }
