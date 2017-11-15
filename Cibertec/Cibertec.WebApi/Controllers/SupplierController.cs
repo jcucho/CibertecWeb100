@@ -40,12 +40,38 @@ namespace Cibertec.WebApi.Controllers
             return BadRequest(ModelState);
         }
 
+        //[HttpDelete]
+        //public IActionResult Delete([FromBody] Supplier supplier)
+        //{
+        //    if (supplier.Id > 0)
+        //        return Ok(_unit.Suppliers.Delete(supplier));
+        //    return BadRequest(new { Message = "Incorrect data" });
+        //}
+
         [HttpDelete]
-        public IActionResult Delete([FromBody] Supplier supplier)
+        [Route("{id:int}")]
+        public IActionResult Delete(int id)
         {
+            var supplier = _unit.Suppliers.GetById(id);
             if (supplier.Id > 0)
                 return Ok(_unit.Suppliers.Delete(supplier));
             return BadRequest(new { Message = "Incorrect data" });
+        }
+
+        [HttpGet]
+        [Route("count")]
+        public IActionResult GetCount()
+        {
+            return Ok(_unit.Suppliers.Count());
+        }
+
+        [HttpGet]
+        [Route("list/{page}/{rows}")]
+        public IActionResult GetList(int page, int rows)
+        {
+            var startRecord = ((page - 1) * rows) + 1;
+            var endRecord = page * rows;
+            return Ok(_unit.Suppliers.PagedList(startRecord, endRecord));
         }
     }
 }

@@ -100,8 +100,8 @@ namespace Cibertec.WebApi.Tests
             var customer = new Customer
             {
                 Id = 1
-            };
-            var result = _customerController.Delete(customer) as OkObjectResult;
+            };            
+            var result = _customerController.Delete(1) as OkObjectResult;
             result.Should().NotBeNull();
             result.Value.Should().NotBeNull();
 

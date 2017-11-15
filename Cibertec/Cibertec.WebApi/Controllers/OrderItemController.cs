@@ -37,16 +37,42 @@ namespace Cibertec.WebApi.Controllers
         public IActionResult Put([FromBody] OrderItem orderItem)
         {
             if (ModelState.IsValid && _unit.OrderItems.Update(orderItem))
-                return Ok(new { Message = "The customer is updated" });
+                return Ok(new { Message = "The OrderItem is updated" });
             return BadRequest(ModelState);
         }
 
+        //[HttpDelete]
+        //public IActionResult Delete([FromBody] OrderItem orderItem)
+        //{
+        //    if (orderItem.Id > 0)
+        //        return Ok(_unit.OrderItems.Delete(orderItem));
+        //    return BadRequest(new { Message = "Incorrect data." });
+        //}
+
         [HttpDelete]
-        public IActionResult Delete([FromBody] OrderItem orderItem)
+        [Route("{id:int}")]
+        public IActionResult Delete(int id)
         {
+            var orderItem = _unit.OrderItems.GetById(id);
             if (orderItem.Id > 0)
                 return Ok(_unit.OrderItems.Delete(orderItem));
             return BadRequest(new { Message = "Incorrect data." });
+        }
+
+        [HttpGet]
+        [Route("count")]
+        public IActionResult GetCount()
+        {
+            return Ok(_unit.OrderItems.Count());
+        }
+
+        [HttpGet]
+        [Route("list/{page}/{rows}")]
+        public IActionResult GetList(int page, int rows)
+        {
+            var startRecord = ((page - 1) * rows) + 1;
+            var endRecord = page * rows;
+            return Ok(_unit.OrderItems.PagedList(startRecord, endRecord));
         }
     }
 }

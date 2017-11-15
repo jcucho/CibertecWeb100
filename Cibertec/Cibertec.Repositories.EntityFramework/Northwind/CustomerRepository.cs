@@ -2,6 +2,7 @@
 using Cibertec.Repositories.Northwind;
 using Microsoft.EntityFrameworkCore;
 using System.Linq;
+using System.Collections.Generic;
 
 namespace Cibertec.Repositories.EntityFramework.Northwind
 {
@@ -10,9 +11,25 @@ namespace Cibertec.Repositories.EntityFramework.Northwind
         public CustomerRepository(DbContext context): base(context)
         {
         }
+
+        public int Count()
+        {
+            throw new System.NotImplementedException();
+        }
+
+        public IEnumerable<Customer> PagedList(int startRow, int endRow)
+        {
+            throw new System.NotImplementedException();
+        }
+
         public Customer searchByNames(string firstname, string lastname)
         {
             return _context.Set<Customer>().FirstOrDefault(x => x.FirstName == firstname && x.LastName == lastname);
+        }
+
+        public Customer SearchByNames(string firstName, string lastName)
+        {
+            throw new System.NotImplementedException();
         }
     }
 }
